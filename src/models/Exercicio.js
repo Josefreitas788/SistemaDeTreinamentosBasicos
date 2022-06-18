@@ -68,25 +68,36 @@ class Exercicio {
 	* @param {String} tempo
 	* @returns {bool}
 	*/
-	set setTempo(tempo) { return true}
+	set setTempo(tempo) { 
+    this.#tempo = tempo;
+    return true
+  }
 	
 	/**
 	* @param {String} tipo
 	* @returns {bool}
 	*/
-	set setTipo(tipo){ return true}
+	set setTipo(tipo){ 
+    this.#tipo = tipo;
+    return true}
 
 	/**
 	* @param {String}
 	* @returns {bool}
 	*/
-	set setAvalicao(avaliacao) {return true}
+	set setAvalicao(avaliacao) {
+    this.#avaliacao = avaliacao;
+    return true
+  }
 
 	/**
 	* @param {String}
 	* @returns {bool}
 	*/
-	set setCargaIntensidade(cargaIntensidade){return true}
+	set setCargaIntensidade(cargaIntensidade){
+    this.#cargaIntensidade = cargaIntensidade;
+    return true
+  }
 }
 
 module.exports = Exercicio;
