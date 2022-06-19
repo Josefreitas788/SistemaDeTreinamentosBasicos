@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const FichaDeTreinamentoDao = require("/FichaDeTreinamentoDao")
+require("./FichaDeTreinamentoDao")
 
 const ExercicioDao = mongoose.model("Execicio", new mongoose.Schema({
     tempo: String,

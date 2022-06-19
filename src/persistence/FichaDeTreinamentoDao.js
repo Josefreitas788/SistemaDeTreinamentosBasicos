@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require('./ExercicioDao');
 
 
 const FichaDeTreinamentoDao = mongoose.model("FichaDeTreinamentoDao", new mongoose.Schema({
