@@ -14,6 +14,13 @@ mongoose.connect('mongodb+srv://Josefilo:Ibacpf17blYgQRnN@cluster0.kvg8p.mongodb
 const app = express();
 
 
+const userController = 
+  require('./controllers/UsuarioController');
+  app.post('/Usuario',userController.store);
+  app.get('/user',userController.show);
+  app.get('/user/buscaemail/*',userController.index);
+
+
 app.get('/', (req, res) => {
   res.send('Hello Express app!')
 });

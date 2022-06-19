@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const User = require('../persistence/UsuarioDao');
+const User = require('./../models/Usuario');
 
 module.exports = {
   async store(req, res){
