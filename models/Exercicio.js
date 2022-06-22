@@ -1,16 +1,17 @@
 const mongoose = require("mongoose");
-require("./FichaDeTreinamentoDao")
+require("./FichaDeTreinamento")
 
-const ExercicioDao = mongoose.model("Execicio", new mongoose.Schema({
+const Exercicio = mongoose.model("Execicio", new mongoose.Schema({
     tempo: String,
 		tipo: String,
 		avaliacao: String,
 		cargaIntensidade: String,
     fichaDeTreinamento: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "FichaDeTreinamentoDao"
+      ref: "FichaDeTreinamento"
       
     }
 }))
 
-modulo.exports = ExercicioDao;
+
+module.exports = Exercicio;
