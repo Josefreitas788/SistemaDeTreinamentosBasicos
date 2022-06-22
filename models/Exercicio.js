@@ -13,4 +13,5 @@ const Exercicio = mongoose.model("Execicio", new mongoose.Schema({
     }
 }))
 
+
 module.exports = Exercicio;
