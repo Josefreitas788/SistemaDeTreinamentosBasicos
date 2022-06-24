@@ -2,11 +2,8 @@ const mongoose = require('mongoose');
 const Exercicio = require('./../models/Exercicio');
 
 module.exports = {
-	/**
+	/*
 	* Armazena o dado no banco de dados
-	* @param {Request} req
-	* @param {Response} res
-	* @returns 
 	*/
   async store(req, res){
     const dataExercicio = await Exercicio.create(req.body);
