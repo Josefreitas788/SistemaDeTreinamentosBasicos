@@ -3,7 +3,7 @@ const Exercicio = require('./../models/Exercicio');
 
 module.exports = {
 	/*
-	* Armazena o dado no banco de dados |  test
+	* Armazena o dado no banco de dados
 	*/
   async store(req, res){
     const dataExercicio = await Exercicio.create(req.body);

@@ -3,15 +3,13 @@ require('./Exercicio');
 
 
 const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Schema({
-    objetivo: String,
-		Frequencia: String,
+    nivel: String, //nivel da pessoa
+		frequencia: String, //quant de dias por semana
 		avaliacaoPosTreino: String,
-		nome: String,
-    tipoFicha: String,
+    idGrupoMuscular: [Number],
     exercicio: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Exercicio"
-      
     }]
 }))
 
