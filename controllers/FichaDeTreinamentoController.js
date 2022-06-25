@@ -25,6 +25,7 @@ module.exports = {
     return res.json(dataFicha);
   },
 
+
 	/**
 	* Encontra os
 	* @param {Request} req
@@ -45,8 +46,12 @@ module.exports = {
 	* @returns 
 	*/
   async destroy(req,res){
+    try {
       let dataFicha = await FichaDeTreinamento.findByIdAndRemove(req.params.id);
-         return res.json(dataFicha);
+         return res.status(200).json(dataFicha);
+    } catch(error){
+      return res.status(500).send(error);
+    }
   },
 
 		/**
