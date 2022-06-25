@@ -1,0 +1,8 @@
+{
+    "fichaTreino":{
+        "id": "1",
+        "nivel": "iniciante",
+        "quantSemana": "3",
+        "idGrupoMuscular": ["1", "2", "3"] 
+    }
+}
