@@ -48,7 +48,8 @@ module.exports = {
   async destroy(req,res){
     try {
       let dataFicha = await FichaDeTreinamento.findByIdAndRemove(req.params.id);
-         return res.status(200).json(dataFicha);
+         //return res.status(200).json(dataFicha);
+      return res.status(200);
     } catch(error){
       return res.status(500).send(error);
     }
