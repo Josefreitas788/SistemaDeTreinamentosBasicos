@@ -22,7 +22,7 @@ module.exports = {
   },
 
 	/**
-	* Procura um dado do tipo Exercicio usando o campo email 
+	* Procura um dado do tipo Exercicio usando o campo email
 	* @param {Request} req
 	* @param {Response} res
 	* @returns 
@@ -55,5 +55,4 @@ module.exports = {
       let dataExercicio = await Exercicio.findByIdAndUpdate(req.params.id,req.body,{new:true}); 
         return res.json(dataExercicio);
     }
- 
 };

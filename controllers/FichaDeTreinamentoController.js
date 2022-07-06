@@ -27,14 +27,14 @@ module.exports = {
 
 
 	/**
-	* Encontra os
+	* 
 	* @param {Request} req
 	* @param {Response} res
 	* @returns 
 	*/
   async index(req, res){
     let dataFicha = await FichaDeTreinamento.find(
-      {email: req.query.email}
+      {email: req.query.email} // Alterar o find, realizar usando o nome do usuario
     );
     return res.json(dataFicha);
   },
@@ -48,7 +48,7 @@ module.exports = {
   async destroy(req,res){
     try {
       let dataFicha = await FichaDeTreinamento.findByIdAndRemove(req.params.id);
-         //return res.status(200).json(dataFicha);
+      //return res.status(200).json(dataFicha);
       return res.status(200);
     } catch(error){
       return res.status(500).send(error);
