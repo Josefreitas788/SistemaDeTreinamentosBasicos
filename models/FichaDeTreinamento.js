@@ -8,9 +8,11 @@ const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Sch
 		frequencia: String, //quant de dias por semana
 		avaliacaoPosTreino: String,
     idGrupoMuscular: [Number],
-    exercicio: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Exercicio"
+    exercicios: [{
+      nome : String,
+      avaliacao: String,
+		  cargaIntensidade: String
+      
     }],
     usuario : [{
       type: mongoose.Schema.Types.ObjectId,

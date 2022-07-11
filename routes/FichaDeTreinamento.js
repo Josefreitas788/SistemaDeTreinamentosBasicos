@@ -5,7 +5,7 @@ const FichaDeTreinamentoController = require('../controllers/FichaDeTreinamentoC
 
 router.post('/',FichaDeTreinamentoController.store);
 router.get('/', FichaDeTreinamentoController.show);
-router.get('/buscaemail/*', FichaDeTreinamentoController.index);
+router.get('/usuarioFicha/*', FichaDeTreinamentoController.index);
 router.put('/:id', FichaDeTreinamentoController.update);
 router.delete('/:id', FichaDeTreinamentoController.destroy);
 

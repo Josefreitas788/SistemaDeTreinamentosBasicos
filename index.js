@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const user = require('./routes/user.js');
-const exercicio = require('./routes/exercicio.js');
+// const exercicio = require('./routes/exercicio.js');
 const fichaDeTreinamento = require('./routes/ficha.js');
 
 //Mongodb config
@@ -21,7 +21,7 @@ const app = express();
 */
 app.use('/usuario', user)
 app.use('/fichadetreinamento', fichaDeTreinamento)
-app.use('/exercicio', exercicio)
+// app.use('/exercicio', exercicio)
 
 app.get('/', (req, res) => {
   res.send('Módulo 1 Sistema De Treinamento Basico');
