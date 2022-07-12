@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 require('./Exercicio');
 require('./FichaDeTreinamento');
+require('./Usuario');
 
 
 const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Schema({
@@ -10,14 +11,13 @@ const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Sch
     dataInicialDaFicha: Date,
     gruposMusculares: [String],
     exercicios: [{
-      nome : String,
-      avaliacao: String,
-		  cargaIntensidade: String
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Exercicio"
     }],
-    usuario : [{
+    usuario : {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Usuario"
-    }]
+    }
 }))
 
 module.exports = FichaDeTreinamento;
