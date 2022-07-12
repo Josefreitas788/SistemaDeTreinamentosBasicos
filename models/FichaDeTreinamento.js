@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-require('./Usuario');
+require('./Exercicio');
 require('./FichaDeTreinamento');
 
 
@@ -7,7 +7,8 @@ const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Sch
     nivel: String, //nivel da pessoa
 		frequencia: String, //quant de dias por semana
 		avaliacaoPosTreino: String,
-    GruposMusculares: [String],
+    dataInicialDaFicha: Date,
+    gruposMusculares: [String],
     exercicios: [{
       nome : String,
       avaliacao: String,
