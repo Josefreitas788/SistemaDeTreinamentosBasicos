@@ -23,14 +23,14 @@ module.exports = {
     return res.json(user);
   },
 	/**
-	* Armazena o dados da ficha de treinamento
+	* Armazena o busca as fichas de um usuario
 	* @param {Request} req
 	* @param {Response} res
 	* @returns 
 	*/
-  async index(req, res){
+  async buscaFichasDoUsuario(req, res){
     let user = await User.find(
-      {email: req.query.email}
+      {fichaDeTreinamento: req.query.fichaDeTreinamento}
     );
     return res.json(user);
   },

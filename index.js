@@ -1,9 +1,9 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const user = require('./routes/user.js');
+const user = require('./routes/Usuario');
 // const exercicio = require('./routes/exercicio.js');
-const fichaDeTreinamento = require('./routes/ficha.js');
+const fichaDeTreinamento = require('./routes/FichaDeTreinamento');
 
 //Mongodb config
 const mongoose = require('mongoose');

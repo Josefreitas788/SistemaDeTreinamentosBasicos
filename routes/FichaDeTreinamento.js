@@ -3,11 +3,11 @@ const router = express.Router();
 const FichaDeTreinamentoController = require('../controllers/FichaDeTreinamentoController');
 
 
-router.post('/',FichaDeTreinamentoController.store);
-router.get('/', FichaDeTreinamentoController.show);
-router.get('/usuarioFicha/*', FichaDeTreinamentoController.index);
-router.put('/:id', FichaDeTreinamentoController.update);
-router.delete('/:id', FichaDeTreinamentoController.destroy);
+router.post('/fichaDeTreinamento/',FichaDeTreinamentoController.store);
+router.get('/fichaDeTreinamento/', FichaDeTreinamentoController.show);
+router.get('/fichaDeTreinamento/usuarioFicha/*', FichaDeTreinamentoController.index);
+router.put('/fichaDeTreinamento/:id', FichaDeTreinamentoController.update);
+router.delete('/fichaDeTreinamento/:id', FichaDeTreinamentoController.destroy);
 
 
 module.exports = router;
