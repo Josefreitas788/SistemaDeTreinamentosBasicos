@@ -34,7 +34,7 @@ module.exports = {
 	*/
   async index(req, res){
     let dataFicha = await FichaDeTreinamento.find(
-      {email: req.query.email} // Alterar o find, realizar usando o nome do usuario
+      {nome: req.query.nome} // Alterar o find, realizar usando o nome do usuario
     );
     return res.json(dataFicha);
   },

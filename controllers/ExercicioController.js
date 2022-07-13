@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const Exercicio = require('./../models/Exercicio');
+const Exercicio = require('./../routes/Exercicio');
+const FichaDeTreinamento = require('./../routes/FichaDeTreinamento');
+const Usuario = require('./../routes/Usuario');
 
 module.exports = {
 	/*

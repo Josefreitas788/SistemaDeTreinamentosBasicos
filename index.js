@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const user = require('./routes/Usuario');
@@ -8,7 +7,8 @@ const fichaDeTreinamento = require('./routes/FichaDeTreinamento');
 //Mongodb config
 const mongoose = require('mongoose');
 var cors = require('cors');
-const FichaDeTreinamento = require('./models/FichaDeTreinamento.js');
+
+//realizarei os testes
 mongoose.connect('mongodb+srv://Josefilo:Ibacpf17blYgQRnN@cluster0.kvg8p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
   useNewUrlParser: true,
   useUnifiedTopology: true
