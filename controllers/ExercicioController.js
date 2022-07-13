@@ -22,17 +22,50 @@ module.exports = {
   },
 
 	/**
-	* Procura um dado do tipo Exercicio usando o campo email
+	* Adiciona uma avaliaçao a um exercicio 
 	* @param {Request} req
 	* @param {Response} res
 	* @returns 
 	*/
-  async index(req, res){
-    let dataExercicio = await Exercicio.find(
-      {email: req.query.email}
+  async addAvaliacao(req, res){
+    let avaliacao = await Exercicio.updateOne(
+      {id: req.query.id},
+      { 
+        $push: 
+        { 
+          avaliacoes :
+          {      
+            data : req.avaliacoes.data, 
+            avaliacao : req.avaliacoes.avaliacao
+          }
+        }
+			}
     );
-    return res.json(dataExercicio);
+    return res.json(avaliacao);
   },
+  	/**
+	* Adiciona uma avaliaçao a um exercicio 
+	* @param {Request} req
+	* @param {Response} res
+	* @returns 
+	*/
+    async addCarga(req, res){
+    let carga = await Exercicio.updateOne(
+      {id: req.query.id},
+      { 
+        $push: 
+        { 
+          carga :
+          {      
+            data : req.cargas.data, 
+            peso : req.cargas.peso
+          }
+        }
+			}
+    );
+    return res.json(carga);
+  },
+
 
 	/**
 	* Armazena o dado no banco de dados

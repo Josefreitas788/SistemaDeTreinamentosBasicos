@@ -5,12 +5,12 @@ require('./Usuario');
 const Exercicio = mongoose.model("Execicio", new mongoose.Schema({
   nome: String,
 	avaliacoes: [{
-    date : Date,
-    avaliacao : String 
+    data : Date,
+    avaliacao : Number 
   }],
 	cargas: [{
     data : Date,
-    peso : String
+    peso : Number
   }],
   usuario : {
     type: mongoose.Schema.Types.ObjectId,
