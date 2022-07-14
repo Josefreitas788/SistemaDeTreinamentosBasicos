@@ -3,14 +3,13 @@ const router = express.Router()
 const exercicioController = require('../controllers/ExercicioController');
 
 
+router.post('/',exercicioController.store);
+router.get('/', exercicioController.show);
+router.put('/:id', exercicioController.update);
+router.delete('/:id', exercicioController.destroy);
 
-router.post('/exercicio/',exercicioController.store);
-router.get('/exercicio/', exercicioController.show);
-router.put('/exercicio/:id', exercicioController.update);
-router.delete('/exercicio/:id', exercicioController.destroy);
-
-router.put('/exercicio/adicionarCarga/:id', exercicioController.addCarga);
-router.put('/exercicio/adicionarAvaliacao/:id', exercicioController.addAvaliacao);
+router.put('/adicionarCarga/:id', exercicioController.addCarga);
+router.put('/adicionarAvaliacao/:id', exercicioController.addAvaliacao);
 
 
 module.exports = router;

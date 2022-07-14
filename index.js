@@ -1,14 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const user = require('./routes/Usuario');
-// const exercicio = require('./routes/exercicio.js');
+//const exercicio = require('./routes/Exercicio.js');
 const fichaDeTreinamento = require('./routes/FichaDeTreinamento');
 
 //Mongodb config
 const mongoose = require('mongoose');
 var cors = require('cors');
 
-//realizarei os testes
 mongoose.connect('mongodb+srv://Josefilo:Ibacpf17blYgQRnN@cluster0.kvg8p.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -21,7 +20,7 @@ const app = express();
 */
 app.use('/usuario', user)
 app.use('/fichadetreinamento', fichaDeTreinamento)
-// app.use('/exercicio', exercicio)
+//app.use('/exercicio', exercicio)
 
 app.get('/', (req, res) => {
   res.send('Módulo 1 Sistema De Treinamento Basico');

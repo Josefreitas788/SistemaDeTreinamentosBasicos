@@ -41,6 +41,7 @@ module.exports = {
 	* @returns 
 	*/
   async destroy(req,res){
+		console.log(req.params.id)
       let user = await User.findByIdAndRemove(req.params.id);
          return res.json(user);
     },
