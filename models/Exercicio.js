@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-require("./FichaDeTreinamento")
-require('./Usuario');
+
+//require("./FichaDeTreinamento")
+//require('./Usuario');
 
 const Exercicio = mongoose.model("Execicio", new mongoose.Schema({
-  nome: String,
+  /*nome: String,
 	avaliacoes: [{
     data : Date,
     avaliacao : Number 
@@ -12,9 +13,13 @@ const Exercicio = mongoose.model("Execicio", new mongoose.Schema({
     data : Date,
     peso : Number
   }],
-  usuario : {
+ usuario : {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario"
+  }*/
+   nome:{
+      type: String,
+      require: true,
   }
   
 }))

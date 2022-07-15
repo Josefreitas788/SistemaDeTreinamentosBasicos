@@ -1,14 +1,18 @@
 const mongoose = require("mongoose");
-require('./FichaDeTreinamento');
 
 const Usuario = mongoose.model("Usuario", new mongoose.Schema({
-    nome: String,
-		email: String,  
-    password: String,
-    /*fichaDeTreinamento: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "FichaDeTreinamento"
-    }]*/
+    nome:{
+      type: String,
+      require: true,
+    },
+     email:{
+      type: String,  
+      require: true,
+    },
+     password:{
+      type: String,
+      require: true,
+    },
 }))
 
 module.exports = Usuario;

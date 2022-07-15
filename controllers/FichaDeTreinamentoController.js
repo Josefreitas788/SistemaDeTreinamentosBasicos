@@ -10,9 +10,15 @@ module.exports = {
 	* @returns 
 	*/
   async store(req, res){
-    const dataFicha = await FichaDeTreinamento.create(req.body);
-    return res.json(dataFicha);
-    },
+    try{
+      const dataFicha = await FichaDeTreinamento.create(req.body);
+      //return res.json(dataFicha);
+      return res.status(200).send(' deu certo :)');
+    }
+    catch(error){
+       return res.status(400).send({error: 'Erro!!'});
+    }
+  },
 	
   /**
 	* Mostra os dados da ficha de treinamento

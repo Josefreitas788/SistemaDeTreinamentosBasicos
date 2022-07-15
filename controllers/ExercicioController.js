@@ -8,10 +8,15 @@ module.exports = {
 	* Armazena o dado no banco de dados
 	*/
   async store(req, res){
-    const dataExercicio = await Exercicio.create(req.body);
-    return res.json(dataExercicio);
-      
-    },
+    try{
+      const dataExercicio = await Exercicio.create(req.body);
+      //return res.json(dataExercicio);
+      return res.status(200).send('Deu certo :)');
+    }
+    catch(error){
+      return res.status(400).send({error: 'Erro!!'});
+    }
+  },
   /**
 	* Mostra o conjunto de dados armazenados
 	* @param {Request} req
@@ -19,7 +24,7 @@ module.exports = {
 	* @returns 
 	*/
   async show(req, res){ 
-    let dataExercicio = await Exercicio.find();
+    let dataExercicio = await Exercicio.find({});
     return res.json(dataExercicio);
   },
 
