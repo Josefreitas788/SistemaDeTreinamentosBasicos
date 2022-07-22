@@ -30,15 +30,26 @@ package persistence_layer {
     class Exercicio {
         -id_exercicio:String
         -nome:String
+        -cargas:[JSON]
+        -avaliacoes:[JSON]
         -data_de_inicio:Date
         -data_de_termino:Date
 
-        +getIdExercicio():int
         +getNome():String
+        +getIdExercicio():int
+        +getDataDeInicio():Date
+        +getDataDeTermino():Date
+        +getCargas():[JSON]
+        +getAvaliacoes():[JSON]
         +setNome(nome:String):boolean
+        +setDataDeInicio(dataDeInicio:Date):boolean
+        +setDataDeTermino(dataDeTermino:Date):boolean
+        +setCargas(cargas:[JSON]):boolean
+        +setAvaliacoes(avaliacoes:[JSON]):boolean
     }
 
-    Exercicio *-- FichaDeTreinamento
-    Usuario *-- FichaDeTreinamento
+    
+    Exercicio "N" *-- "1" FichaDeTreinamento
+    Usuario "1" *-- "1" FichaDeTreinamento
 }
 @enduml
