@@ -1,6 +1,8 @@
 @startuml
 allow_mixing
 package "DTO"{
+    package "UsuarioDTO"{  
+
             json "UsuarioStoreReq" as userloginreq {
                 "nome" : "",
                 "email" : "",
@@ -9,26 +11,28 @@ package "DTO"{
                     "data": "",
                     "avalicao":"",
                     "exercico" :""
-            }]
+                }]
             }
 
-            json "UsuarioRes" as userloginres {
-                "msgcode" : "001",
-                "userobject": "{}"
+            json "UsuarioStoreRes" as userloginres {
+                "StatusCode" : "",
+                "msg" : ""
             }
-            
             json "UsuarioAdicionaAvalicaoReq" as UsuarioStoreq{
                 "id" : "",
                 "avalicoes":[{ 
                     "data": " ",
                     "avalicao":"",
                     "exercico" :""
-            }]
-                
+                }]
             }
+
             json "UsusarioStoreRes" as usercreateres{
                 "msgcode" : "002",
                 "userobject": "{}"
             }
+        }
+            
+            
 
 }
