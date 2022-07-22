@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router()
+const router = express.Router('')
 const exercicioController = require('../controllers/ExercicioController');
 
 router.post('/',exercicioController.store);
