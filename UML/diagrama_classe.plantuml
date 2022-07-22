@@ -16,6 +16,7 @@ package "DTO"{
                 "msgcode" : "001",
                 "userobject": "{}"
             }
+            
             json "UsuarioAdicionaAvalicaoReq" as UsuarioStoreq{
                 "id" : "",
                 "avalicoes":[{ 
@@ -30,4 +31,5 @@ package "DTO"{
                 "userobject": "{}"
             }
 
-        }
+}
+

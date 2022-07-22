@@ -5,7 +5,7 @@ require('./Usuario');
 
 
 const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Schema({
-    nivel: String, //nivel da pessoa
+    nivel: String, //Nível de treinamento
 		frequencia: String, //quant de dias por semana
 		avaliacaoPosTreino: String,
     dataInicialDaFicha: Date,

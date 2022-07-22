@@ -1,0 +1,44 @@
+@startuml
+package persistence_layer {
+    class Usuario {
+        -id_usuario:String
+        -nome:String
+        -email:String
+        -senha:String
+
+        +getNome():String
+        +getEmail():String
+        +getSenha():String
+        +setNome(nome:String):boolean
+        +setEmail(email:String):boolean
+    }
+
+    class FichaDeTreinamento {
+        -id_ficha:String
+        -frequencia:String
+        -avalicacaoPosTreinamento:String
+        -gruposMusculares:[String]
+
+        +getFrequencia():String
+        +getAvalicacaoPosTreinamento():String
+        +getGruposMusculares():[String]
+        +setFrequencia(frequencia:String):boolean
+        +setAvalicacaoPosTreinamento(avalicacaoPosTreinamento:String):boolean
+        +setGruposMusculares(gruposMusculares:[String]):boolean
+    }
+
+    class Exercicio {
+        -id_exercicio:String
+        -nome:String
+        -data_de_inicio:Date
+        -data_de_termino:Date
+
+        +getIdExercicio():int
+        +getNome():String
+        +setNome(nome:String):boolean
+    }
+
+    Exercicio *-- FichaDeTreinamento
+    Usuario *-- FichaDeTreinamento
+}
+@enduml
