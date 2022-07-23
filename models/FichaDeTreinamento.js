@@ -15,7 +15,7 @@ const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Sch
       type: mongoose.Schema.Types.ObjectId,
       ref: "Exercicio"
     }],
-    userId: {
+    Usuario: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Usuario"
     }

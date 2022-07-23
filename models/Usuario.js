@@ -8,11 +8,7 @@ const Usuario = mongoose.model("Usuario", new mongoose.Schema({
   password: String,
   avaliacoes: [{
     data: { type: Date, default: Date.now },
-    avaliacao: Number,
-    exercicio: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Exercicio"
-    }
+    avaliacao: Number
   }],
   fichaDeTreinamento: [{
     type: mongoose.Schema.Types.ObjectId,

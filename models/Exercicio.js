@@ -7,12 +7,15 @@ const Exercicio = mongoose.model("Execicio", new mongoose.Schema({
 	cargas: [{
     data : { type: Date, default: Date.now },
     peso : Number
-  }]
-  /*
- usuario : {
+  }],
+  avaliacoes: [{
+    data: { type: Date, default: Date.now },
+    avaliacao: Number
+  }],
+  usuario : {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario"
-  }*/
+  }
 }))
 
 module.exports = Exercicio;
