@@ -11,19 +11,6 @@ module.exports = {
        return res.status(400).send({error: 'Erro!!'});
     }
   },
-
-  async show(req, res){ 
-    let dataFicha = await FichaDeTreinamento.find();
-    return res.json(dataFicha);
-  },
-
-  async index(req, res){
-    let dataFicha = await FichaDeTreinamento.find(
-      {__id: req.query.id}
-    );
-    return res.json(dataFicha);
-  },
-
   async destroy(req,res){
     try {
       let dataFicha = await FichaDeTreinamento.findByIdAndRemove(req.params.id);
@@ -32,12 +19,24 @@ module.exports = {
       return res.status(500).send(error);
     }
   },
-
-  async update(req,res){
+  async addExercicio(req,res){
+    let carga = await FichaDeTreinamento.updateOne(
+      {id: req.query.id},
+      { 
+        //TODO
+        $push: exercicio.id
+			}
+      
+    )
+    return res.json(dataFicha);
+    },
+  async DeleteExercicio(req,res){
       let dataFicha = await FichaDeTreinamento.findByIdAndUpdate(
-				req.params.id,
-				req.body,
-				{new:true}
+        {id: req.query.id},
+        { 
+          //TODO
+          $push: exercicio.id
+        }
 			); 
         return res.json(dataFicha);
     }

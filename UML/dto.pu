@@ -1,8 +1,8 @@
 @startuml
 allow_mixing
 package "DTO"{
-    package "UsuarioDTO"{  
 
+        package "UsuarioDTO"{
             json "UsuarioStoreReq" as userloginreq {
                 "nome" : "",
                 "email" : "",
@@ -13,25 +13,136 @@ package "DTO"{
                     "exercico" :""
                 }]
             }
-
             json "UsuarioStoreRes" as userloginres {
                 "StatusCode" : "",
                 "msg" : ""
             }
-            json "UsuarioAdicionaAvalicaoReq" as UsuarioStoreq{
+        
+            json "UsuarioBuscarFichasReq" as UsuarioBuscarFichasReq {
+                "id" : ""
+            }
+            json "UsuarioBuscarFichasRes" as UsuarioBuscarFichasRes{
+                "fichaDeTreinamento" : [{ 
+                    "id" : "",    
+                    "nivel" : "",
+                    "frequncia" : "",
+                    "avaliacaoPosTreino" : "",
+                    "dataInicialDaFicha" : "",
+                    "gruposMusculares": "",
+                    "exercicios" : "",
+                    "Usuario" : "" 
+
+                }]                 
+            }
+        }
+        package "FichaDeTreinamento"{
+            json "FichaDeTreinamentoStoreReq" as FichaDeTreinamentoStoreReq {
+                "nivel" : "",
+                "frequncia" : "",
+                "avaliacaoPosTreino" : "",
+                "dataInicialDaFicha" : "",
+                "gruposMusculares": "",
+                "exercicios" : "",
+                "Usuario" : "" 
+            }
+            json "FichaDeTreinamentoStoreRes" as FichaDeTreinamentoStoreRes {
+                "StatusCode" : "",
+                "msg" : ""
+            }
+            json "FichaDeTreinamentoDestroyReq" as FichaDeTreinamentoDestroyReq {
+                "id" : ""
+            }
+            json "FichaDeTreinamentoDestroyRes" as FichaDeTreinamentoDestroyRes { 
+                "id" : "",    
+                "nivel" : "",
+                "frequncia" : "",
+                "avaliacaoPosTreino" : "",
+                "dataInicialDaFicha" : "",
+                "gruposMusculares": "",
+                "exercicios" : "",
+                "Usuario" : "" 
+                                 
+            }
+            json "FichaDeTreinamentoExercicioReq" as FichaDeTreinamentoAddExercicioReq {
                 "id" : "",
-                "avalicoes":[{ 
-                    "data": " ",
-                    "avalicao":"",
-                    "exercico" :""
+                "idExercicio" : ""
+            }
+            json "FichaDeTreinamentoExercicioRes" as FichaDeTreinamentoAddExercicioRes {
+                "FichaDeTreinamento": [{
+                    "exercicio" : ""
                 }]
             }
 
-            json "UsusarioStoreRes" as usercreateres{
-                "msgcode" : "002",
-                "userobject": "{}"
-            }
         }
+        package "Exercicio"{
+            json "ExercicioStoreReq" as ExercicioStoreReq {
+                "nome": "",  
+	            "cargas": [{
+                    "data": "",
+                    "peso" : ""
+                }],
+                "avaliacoes": [{
+                    "data": "",
+                    "avaliacao": ""
+                }],
+                "gruposMusculares": [],
+                "usuario": ""
+
+            }
+            json "ExercicioStoreRes" as ExercicioStoreRes {
+                "StatusCode" : "",
+                "msg" : ""
+            }
+            json "ExercicioDestroyReq" as ExercicioDestroyReq {
+                "id" : ""
+            }
+            json "ExercicioDestroyRes" as ExercicioDestroyRes { 
+                "id" : "",    
+                "nome": "",  
+                "cargas": [{
+                    "data": "",
+                    "peso" : ""
+                }],
+                "avaliacoes": [{
+                    "data": "",
+                    "avaliacao": ""
+                }],
+                "gruposMusculares": [],
+                "usuario": ""
+            }
+            json "ExercicioAvaliacaoReq" as ExercicioAvaliacaoReq {
+                "id" : "",
+                "data" : "",
+                "avaliacao" : ""
+            }
+            json "ExercicioAvaliacaoRes" as ExercicioAvaliacaoRes { 
+                "id" : "",    
+                "nome": "",  
+                "avaliacoes": [{
+                    "data": "",
+                    "avaliacao": ""
+                }],
+                "usuario": ""
+            }
+            json "ExercicioCargaReq" as ExercicioCargaReq {
+                "id" : "",
+                "data" : "",
+                "peso" : ""
+            }
+            json "ExercicioCargaRes" as ExercicioCargaRes { 
+                "id" : "",    
+                "nome": "",  
+                "cargas": [{
+                    "data": "",
+                    "peso" : ""
+                }],
+                "usuario": ""
+            }
+
+  
+  }
+          
+        
             
             
 

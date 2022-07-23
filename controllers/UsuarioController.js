@@ -15,25 +15,11 @@ module.exports = {
     }
   },
 
-  async buscaFichasDoUsuario(req, res){
+  async buscarFichas(req, res){
     let user = await Usuario.find(
       {fichaDeTreinamento: req.query.fichaDeTreinamento}
     );
     return res.json(user);
-  },
-	
-  async destroy(req,res){
-      let user = await Usuario.findByIdAndRemove(req.params.id);
-         return res.json(user);
-    },
-	
-  async update(req,res){
-      let user = await Usuario.findByIdAndUpdate(req.params.id,req.body,{new:true}); 
-      return res.status(200).send(
-				{
-					"msg": "Atualizado com sucesso"
-				}
-			);
-    }
+  }
  
 };

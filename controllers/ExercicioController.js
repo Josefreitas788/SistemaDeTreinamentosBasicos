@@ -32,6 +32,22 @@ module.exports = {
     );
     return res.json(avaliacao);
   },
+  async removeAvaliacao(req, res){
+    let avaliacao = await Exercicio.updateOne(
+      {id: req.query.id},
+      { 
+        $pull: 
+        { 
+          avaliacoes :
+          {      
+            data : req.avaliacoes.data, 
+            avaliacao : req.avaliacoes.avaliacao
+          }
+        }
+      }
+    );
+    return res.json(avaliacao);
+  },
 
     async addCarga(req, res){
     let carga = await Exercicio.updateOne(
@@ -46,6 +62,22 @@ module.exports = {
           }
         }
 			}
+    );
+    return res.json(carga);
+  },
+  async removeCarga(req, res){
+    let carga = await Exercicio.updateOne(
+      {id: req.query.id},
+      { 
+        $pull: 
+        { 
+          carga :
+          {      
+            data : req.cargas.data, 
+            peso : req.cargas.peso
+          }
+        }
+      }
     );
     return res.json(carga);
   },
