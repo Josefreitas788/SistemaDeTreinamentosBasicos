@@ -24,18 +24,17 @@ module.exports = {
       {id: req.query.id},
       { 
         //TODO
-        $push: exercicio.id
+        $pull: exercicio.id
 			}
       
     )
     return res.json(dataFicha);
     },
-  async DeleteExercicio(req,res){
+  async removeExercicio(req,res){
       let dataFicha = await FichaDeTreinamento.findByIdAndUpdate(
         {id: req.query.id},
         { 
-          //TODO
-          $push: exercicio.id
+          $pull: exercicio.id
         }
 			); 
         return res.json(dataFicha);

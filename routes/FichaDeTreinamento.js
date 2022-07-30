@@ -3,9 +3,10 @@ const router = express.Router();
 const FichaDeTreinamentoController = require('../controllers/FichaDeTreinamentoController');
 
 
-router.post('/',FichaDeTreinamentoController.store);
-router.put('/:id', FichaDeTreinamentoController.update);
-router.delete('/:id', FichaDeTreinamentoController.destroy);
+router.post('/ficha/',FichaDeTreinamentoController.store);
+router.put('/adicionaExercicioFicha/:id', FichaDeTreinamentoController.addExercicio);
+router.put('/removeExercicioFicha/', FichaDeTreinamentoController.removeExercicio);
+router.delete('/deletarFicha/:id', FichaDeTreinamentoController.destroy);
 
 
 module.exports = router;
