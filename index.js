@@ -25,23 +25,6 @@ app.use('/usuario', user)
 app.use('/fichadetreinamento', fichaDeTreinamento)
 app.use('/exercicio', exercicio)
 
-/*
-app.use('/authenticate', async(req, res) => {
-  const {email, password} = req.body;
-  //const user = await user.findOne({email,password });
-  //const user = await user.findOne({email}).select('+password'); 
-   const userLogin = await user.findOne({ where: { email, password }});
-  console.log(userLogin)
- 
-  if(!userLogin){
-    return res.status(400).send({error: 'Usuário não encontrado'});
-  }
-  if(!await compare(password, userLogin.password))
-    return res.status(400).send({error: 'Senha invalida'});
-
-  res.send({userLogin});
-});*/
-
 app.listen(3000, () => {
   console.log('server started');
 });

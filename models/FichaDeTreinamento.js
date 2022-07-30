@@ -3,7 +3,6 @@ require('./Exercicio');
 require('./FichaDeTreinamento');
 require('./Usuario');
 
-
 const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Schema({
 
     nivel: String, //Nível de treinamento

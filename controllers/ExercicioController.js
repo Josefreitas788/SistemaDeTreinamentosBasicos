@@ -16,6 +16,16 @@ module.exports = {
     }
   },
   
+  async showById(req, res){
+    try{
+      const dataExercicio = await Exercicio.findById(req.params.id);
+      return res.status(200).send(dataExercicio);
+    }
+    catch(error){
+      return res.status(400).send({error: 'Erro!!'});
+    }
+  },
+  
   async addAvaliacao(req, res){
     let avaliacao = await Exercicio.updateOne(
       {id: req.query.id},
@@ -32,6 +42,7 @@ module.exports = {
     );
     return res.json(avaliacao);
   },
+  
   async removeAvaliacao(req, res){
     let avaliacao = await Exercicio.updateOne(
       {id: req.query.id},
@@ -65,6 +76,7 @@ module.exports = {
     );
     return res.json(carga);
   },
+  
   async removeCarga(req, res){
     let carga = await Exercicio.updateOne(
       {id: req.query.id},
@@ -82,13 +94,10 @@ module.exports = {
     return res.json(carga);
   },
 
-
-
   async destroy(req,res){
       let dataExercicio = await Exercicio.findByIdAndRemove(req.params.id);
          return res.json(dataExercicio);
   },
-
 
   async update(req,res){
       let dataExercicio = await Exercicio.findByIdAndUpdate(req.params.id,req.body,{new:true}); 

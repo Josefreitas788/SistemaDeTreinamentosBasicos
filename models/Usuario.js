@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 require("./FichaDeTreinamento");
 
 
-const Usuario = mongoose.model("Usuario", new mongoose.Schema({
+const userSchema= new mongoose.Schema({
   nome: String,
   email: String,
   password: String,
@@ -10,6 +10,12 @@ const Usuario = mongoose.model("Usuario", new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "FichaDeTreinamento"
   }]
-}))
+})
+
+userSchema.method('compare', async (formPass, userPass) => {
+  return Usuario.compare(formPass, userPass)
+})
+
+const Usuario = mongoose.model("Usuario", userSchema)
 
 module.exports = Usuario;
