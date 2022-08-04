@@ -14,6 +14,15 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
+  async showById(req, res){
+    try{
+      const dataExercicio = await Exercicio.findById(req.params.id);
+      return res.status(200).send(dataExercicio);
+    }
+    catch(error){
+      return res.status(400).send({error: 'Erro!!'});
+    }
+  },
   
   async showById(req, res){
     try{
