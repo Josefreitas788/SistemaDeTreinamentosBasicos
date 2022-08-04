@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "UML/diagrama_classe.plantuml": [
+      {
+        "id": "8f570378-1eab-475e-8e45-bd6211a820f0",
+        "line": 6,
+        "version": 1,
+        "index": 120
+      }
+    ]
+  }
 }
