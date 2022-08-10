@@ -23,6 +23,7 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
+<<<<<<< HEAD:src/controllers/ExercicioController.js
   
   async showById(req, res){
     try{
@@ -33,6 +34,8 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
+=======
+>>>>>>> origin/main:controllers/ExercicioController.js
   
   async addAvaliacao(req, res){
     let avaliacao = await Exercicio.updateOne(
