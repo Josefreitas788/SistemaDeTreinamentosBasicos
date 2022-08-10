@@ -26,6 +26,7 @@ module.exports = {
 <<<<<<< HEAD:src/controllers/ExercicioController.js
 <<<<<<< HEAD:src/controllers/ExercicioController.js
 <<<<<<< HEAD:src/controllers/ExercicioController.js
+<<<<<<< HEAD:src/controllers/ExercicioController.js
   
   async showById(req, res){
     try{
@@ -36,6 +37,8 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
+=======
+>>>>>>> origin/main:controllers/ExercicioController.js
 =======
 >>>>>>> origin/main:controllers/ExercicioController.js
 =======
