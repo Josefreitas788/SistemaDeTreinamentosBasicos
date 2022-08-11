@@ -1,8 +1,4 @@
 const mongoose = require("mongoose");
-require('./Exercicio');
-require('./FichaDeTreinamento');
-require('./Usuario');
-
 
 const FichaDeTreinamento = mongoose.model("FichaDeTreinamento", new mongoose.Schema({
 
