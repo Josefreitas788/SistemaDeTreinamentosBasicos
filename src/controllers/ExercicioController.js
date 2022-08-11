@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const Exercicio = require('./../models/Exercicio');
-const FichaDeTreinamento = require('./../models/FichaDeTreinamento');
-const Usuario = require('./../models/Usuario');
+
+const Exercicio = require('../database/models/Exercicio');
+const FichaDeTreinamento = require('../database/models/FichaDeTreinamento');
+const Usuario = require('../database/models/Usuario');
 
 module.exports = {
 
@@ -15,6 +16,16 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
+  async showById(req, res){
+    try{
+      const dataExercicio = await Exercicio.findById(req.params.id);
+      return res.status(200).send(dataExercicio);
+    }
+    catch(error){
+      return res.status(400).send({error: 'Erro!!'});
+    }
+  },
+  
   async showById(req, res){
     try{
       const dataExercicio = await Exercicio.findById(req.params.id);
@@ -41,6 +52,7 @@ module.exports = {
     );
     return res.json(avaliacao);
   },
+
   async removeAvaliacao(req, res){
     let avaliacao = await Exercicio.updateOne(
       {id: req.query.id},
@@ -74,6 +86,7 @@ module.exports = {
     );
     return res.json(carga);
   },
+
   async removeCarga(req, res){
     let carga = await Exercicio.updateOne(
       {id: req.query.id},
@@ -92,15 +105,17 @@ module.exports = {
   },
 
 
-
   async destroy(req,res){
       let dataExercicio = await Exercicio.findByIdAndRemove(req.params.id);
          return res.json(dataExercicio);
   },
 
-
   async update(req,res){
-      let dataExercicio = await Exercicio.findByIdAndUpdate(req.params.id,req.body,{new:true}); 
-        return res.json(dataExercicio);
+      let dataExercicio = await Exercicio.findByIdAndUpdate(
+				req.params.id,
+				req.body,
+				{new:true}
+			); 
+      return res.json(dataExercicio);
     }
 };

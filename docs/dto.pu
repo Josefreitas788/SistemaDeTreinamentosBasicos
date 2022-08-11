@@ -35,7 +35,8 @@ package "DTO"{
                 }]                 
             }
         }
-        package "FichaDeTreinamento"{
+
+        package "FichaDeTreinamentoDTO"{
             json "FichaDeTreinamentoStoreReq" as FichaDeTreinamentoStoreReq {
                 "nivel" : "",
                 "frequncia" : "",
@@ -74,7 +75,7 @@ package "DTO"{
             }
 
         }
-        package "Exercicio"{
+        package "ExercicioDTO"{
             json "ExercicioStoreReq" as ExercicioStoreReq {
                 "nome": "",  
 	            "cargas": [{
