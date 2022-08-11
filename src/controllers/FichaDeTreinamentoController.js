@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const FichaDeTreinamento = require('../database/models/FichaDeTreinamento');
 
 module.exports = {
@@ -48,6 +49,5 @@ module.exports = {
   async show(req, res) {
     const ficha = await FichaDeTreinamento.find(req.body);
     return res.json(ficha);
-  },
-
+  }
 };

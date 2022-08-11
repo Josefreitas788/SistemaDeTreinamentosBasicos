@@ -35,6 +35,7 @@ package "DTO"{
                 }]                 
             }
         }
+
         package "FichaDeTreinamentoDTO"{
             json "FichaDeTreinamentoStoreReq" as FichaDeTreinamentoStoreReq {
                 "nivel" : "",

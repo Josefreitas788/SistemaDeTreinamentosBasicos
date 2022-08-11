@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+
 const Exercicio = require('../database/models/Exercicio');
 const FichaDeTreinamento = require('../database/models/FichaDeTreinamento');
 const Usuario = require('../database/models/Usuario');
 
 module.exports = {
+
   async store(req, res){
     try{
 			console.log(req.body)
@@ -23,7 +25,6 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
-<<<<<<< HEAD:src/controllers/ExercicioController.js
   
   async showById(req, res){
     try{
@@ -34,8 +35,6 @@ module.exports = {
       return res.status(400).send({error: 'Erro!!'});
     }
   },
-=======
->>>>>>> origin/main:controllers/ExercicioController.js
   
   async addAvaliacao(req, res){
     let avaliacao = await Exercicio.updateOne(
@@ -53,7 +52,7 @@ module.exports = {
     );
     return res.json(avaliacao);
   },
-  
+
   async removeAvaliacao(req, res){
     let avaliacao = await Exercicio.updateOne(
       {id: req.query.id},
@@ -87,7 +86,7 @@ module.exports = {
     );
     return res.json(carga);
   },
-  
+
   async removeCarga(req, res){
     let carga = await Exercicio.updateOne(
       {id: req.query.id},
@@ -104,6 +103,7 @@ module.exports = {
     );
     return res.json(carga);
   },
+
 
   async destroy(req,res){
       let dataExercicio = await Exercicio.findByIdAndRemove(req.params.id);
